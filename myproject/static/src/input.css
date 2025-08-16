@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* npx tailwindcss -i ./myproject/static/src/input.css -o ./myproject/static/css/output.css --postcss --minify */
+/* npx tailwindcss -i ./myproject/static/src/input.css -o ./myproject/static/css/output.css --postcss --watch */
+
+@layer components {
+  .table-base {
+    @apply border-collapse w-full;
+  }
+  .th-base {
+    @apply border border-black p-2 bg-gray-100 text-left;
+  }
+  .td-base {
+    @apply border border-black p-2 text-left;
+  }
+}
+

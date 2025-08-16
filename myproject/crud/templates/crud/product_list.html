@@ -1,31 +1,25 @@
 {% extends "base.html" %}
-{% load static %}
-{#}
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/table.css' %}">
-{% endblock %}
-{#}
 
 {% block title %}商品一覧{% endblock %}
 
 {% block content %}
 <h1>商品一覧</h1>
-<table>
+<table class="border-collapse w-full">
     <thead>
         <tr>
-            <th>商品名</th>
-            <th>価格</th>
+            <th class="th-base">商品名</th>
+            <th class="th-base">価格</th>
         </tr>
     </thead>
     <tbody>
     {% for product in products %}
         <tr>
-            <td>{{ product.name }}</td>
-            <td>{{ product.price }} 円</td>
+            <td class="td-base">{{ product.name }}</td>
+            <td class="td-base">{{ product.price }} 円</td>
         </tr>
         {% empty %}
         <tr>
-            <td colspan="2">商品はありません</td>
+            <td colspan="2" class="td-base">商品はありません</td>
         </tr>
     {% endfor %}
     </tbody>
