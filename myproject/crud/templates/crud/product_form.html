@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}新規作成{% endblock %}
+{% block content %}
+<h1>新規作成</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <br>
+    <a href="{% url 'list' %}">戻る</a>
+    <input type="submit" class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700" value="登録">
+</form>
+{% endblock %}
