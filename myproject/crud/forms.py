@@ -6,7 +6,7 @@ BASE_INPUT_CLS = "block w-full rounded border border-gray-300 px-3 py-2 text-gra
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ["name", "price"]
+        fields = ["name", "price", "category"]
         widgets = {
             "name": forms.TextInput(attrs={
                 "class": BASE_INPUT_CLS, "placeholder": "商品名"
@@ -14,8 +14,12 @@ class ProductForm(forms.ModelForm):
             "price": forms.NumberInput(attrs={
                 "class": BASE_INPUT_CLS, "min": "0", "step": "1", "placeholder": "価格"
             }),
+            "category": forms.Select(attrs={
+                "class": BASE_INPUT_CLS, "placeholder": "カテゴリ"
+            })
         }
         labels = {
             "name": "商品名",
             "price": "価格",
+            "category": "カテゴリ"
         }
