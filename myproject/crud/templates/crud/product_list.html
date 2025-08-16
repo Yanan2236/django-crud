@@ -10,6 +10,7 @@
         <tr>
             <th class="th-base">商品名</th>
             <th class="th-base">価格</th>
+            <th class="th-base">アクション</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,13 @@
         <tr>
             <td class="td-base">{{ product.name }}</td>
             <td class="td-base">{{ product.price }} 円</td>
+            <td class="td-base">
+                <button
+                class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                onclick="location.href='{% url 'edit' pk=product.pk %}'">
+                編集
+                </button>
+            </td>
         </tr>
         {% empty %}
         <tr>
