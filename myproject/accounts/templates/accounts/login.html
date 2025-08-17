@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}ログイン{% endblock %}
+{% block content %}
+<h1>ログイン</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <br>
+    <input type="submit" class="px-4 py-2 rounded bg-blue-600 text-white hover:bg-blue-700" value="ログイン">
+</form>
+{% endblock %}

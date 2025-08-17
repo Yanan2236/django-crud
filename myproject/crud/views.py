@@ -23,3 +23,4 @@ class ProductDeleteView(ProductSingleMixin, DeleteView):
 
 class ProductDetailView(ProductSingleMixin, DetailView):
     pass
+
