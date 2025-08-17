@@ -15,9 +15,11 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name="商品")
     price = models.PositiveIntegerField(verbose_name="価格")
-    #カテゴリを埋めたらnull=False,bland=Trueにすること。
+    #カテゴリを埋めたらnull=False,bland=Falseにすること。
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name="products", null=True, blank=True)
     img = models.ImageField(blank=True, default='noImage.png')
+    description = models.TextField(blank=True, null=True, default='', verbose_name="商品詳細の説明")
+
     
     def __str__(self):
         return self.name
