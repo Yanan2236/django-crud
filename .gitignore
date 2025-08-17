@@ -26,3 +26,5 @@ Thumbs.db
 # Tailwind build cache (あれば)
 .pnp.*
 .yarn/*
+
+media/
