@@ -11,15 +11,15 @@ class ProductListView(ProductListMixin, ListView):
 class ProductCreateView(ProductSingleMixin, CreateView):
     form_class = ProductForm
     template_name = "crud/product_create_form.html"
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("crud:list")
 
 class ProductUpdateView(ProductSingleMixin, UpdateView):
     form_class = ProductForm
     template_name = "crud/product_update_form.html"
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("crud:list")
 
 class ProductDeleteView(ProductSingleMixin, DeleteView):
-    success_url = reverse_lazy("list")
+    success_url = reverse_lazy("crud:list")
 
 class ProductDetailView(ProductSingleMixin, DetailView):
     pass

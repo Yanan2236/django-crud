@@ -9,7 +9,7 @@
     {% csrf_token %}
     以下の商品を削除してもよろしいですか？<br>
     {{ product }}<br>
-    <a href="{% url 'list' %}">キャンセル</a>
+    <a href="{% url 'crud:list' %}">キャンセル</a>
     <input type="submit" value="削除" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 cursor-pointer">
 </form>
 {% endblock %}

@@ -4,7 +4,7 @@
 
 {% block content %}
 <h1>商品一覧</h1>
-<a href="{% url 'new' %}">新規作成</a>
+<a href="{% url 'crud:new' %}">新規作成</a>
 <table class="border-collapse w-full">
     <thead>
         <tr>
@@ -25,17 +25,17 @@
             <td class="td-base">
                 <button
                 class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
-                onclick="location.href='{% url 'detail' pk=product.pk %}'">
+                onclick="location.href='{% url 'crud:detail' pk=product.pk %}'">
                 詳細
                 </button>
                 <button
                 class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
-                onclick="location.href='{% url 'edit' pk=product.pk %}'">
+                onclick="location.href='{% url 'crud:edit' pk=product.pk %}'">
                 編集
                 </button>
                 <button
                 class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
-                onclick="location.href='{% url 'delete' pk=product.pk %}'">
+                onclick="location.href='{% url 'crud:delete' pk=product.pk %}'">
                 削除
                 </button>
             </td>
@@ -49,7 +49,7 @@
 </table>
 {% include "pagination.html" %}
 
-<form method="post" action="{% url 'logout' %}">
+<form method="post" action="{% url 'accounts:logout' %}">
   {% csrf_token %}
   <button type="submit">ログアウト</button>
 </form>

@@ -130,6 +130,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 #ログイン認証
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'list'
+LOGIN_URL = 'accounts:login'
+LOGIN_REDIRECT_URL = 'crud:list'
 LOGOUT_REDIRECT_URL = 'core:top'
