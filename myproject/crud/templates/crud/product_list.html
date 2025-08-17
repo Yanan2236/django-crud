@@ -11,6 +11,7 @@
             <th class="th-base">商品名</th>
             <th class="th-base">価格</th>
             <th class="th-base">カテゴリ</th>
+            <th class="th-base">画像</th>
             <th class="th-base">アクション</th>
         </tr>
     </thead>
@@ -20,6 +21,7 @@
             <td class="td-base">{{ product.name }}</td>
             <td class="td-base">{{ product.price }} 円</td>
             <td class="td-base">{{ product.category }}</td>
+            <td class="td-base"><img src="{{ product.img.url }}" alt="商品画像" style="width:100px height:auto;"></td>            
             <td class="td-base">
                 <button
                 class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
