@@ -3,27 +3,23 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView, D
 from .models import Product
 from django.urls import reverse_lazy
 from .forms import ProductForm
+from .mixins import ProductSingleMixin, ProductListMixin
 
-class ProductListView(ListView):
-    model = Product
-    context_object_name = "products"
+class ProductListView(ProductListMixin, ListView):
     paginate_by = 3
 
-class ProductCreateView(CreateView):
-    model = Product
+class ProductCreateView(ProductSingleMixin, CreateView):
     form_class = ProductForm
     template_name = "crud/product_create_form.html"
     success_url = reverse_lazy("list")
 
-class ProductUpdateView(UpdateView):
-    model = Product
+class ProductUpdateView(ProductSingleMixin, UpdateView):
     form_class = ProductForm
     template_name = "crud/product_update_form.html"
     success_url = reverse_lazy("list")
 
-class ProductDeleteView(DeleteView):
-    model = Product
+class ProductDeleteView(ProductSingleMixin, DeleteView):
     success_url = reverse_lazy("list")
 
-class ProductDetailView(DetailView):
-    model = Product
+class ProductDetailView(ProductSingleMixin, DetailView):
+    pass
