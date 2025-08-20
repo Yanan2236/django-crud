@@ -24,6 +24,7 @@ urlpatterns = [
     path('crud/', include("crud.urls")),
     path('admin/', admin.site.urls),
     path('accounts/', include("accounts.urls")),
+    path('shops/', include("shops.urls")),
 ]
 
 if settings.DEBUG:
