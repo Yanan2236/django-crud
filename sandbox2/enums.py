@@ -5,6 +5,7 @@ class Stat(Enum):
     DEFENSE = "DEFENSE"
     HP_MAX = "HP_MAX"
     HP_CURR = "HP_CURR"
+    HP_MISS = "HP_MISS"
 
 class SkillColor(Enum):
     RED = "RED"

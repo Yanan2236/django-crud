@@ -60,6 +60,9 @@ class BattleActor:
     def resolve_hp_max(self) -> int:
         return self.base.hp
     
+    def resolve_hp_miss(self) -> int:
+        return self.base.hp - self.hp_curr
+    
     def resolve_poison(self) -> int:
         poisons = self.status_effects[EffectKind.POISON]
         total_poison = sum(s.volume for s in poisons)
@@ -69,7 +72,8 @@ class BattleActor:
         Stat.ATTACK: resolve_attack,
         Stat.DEFENSE: resolve_defense,
         Stat.HP_CURR: resolve_hp_curr,
-        Stat.HP_MAX: resolve_hp_max
+        Stat.HP_MAX: resolve_hp_max,
+        Stat.HP_MISS: resolve_hp_miss,
     }
 
     def is_defeated(self) -> bool:
